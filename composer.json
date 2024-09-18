@@ -1,0 +1,17 @@
+{
+    "name": "sfw2/exception",
+    "type": "library",
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3",
+
+    "require": {
+        "php": "^8.3",
+
+        "fig/http-message-util": "^1.1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SFW2\\Exception\\": "src/"
+        }
+    }
+}
+
