@@ -56,4 +56,12 @@ abstract class HttpException extends SFW2Exception
     {
         return $this->description;
     }
+
+    /**
+     * @return array<string, string>
+     */
+    public function getAdditionalHeaders(): array
+    {
+        return [];
+    }
 }
