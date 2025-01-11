@@ -37,8 +37,7 @@ abstract class HttpException extends SFW2Exception
         string           $originMsg,
         int              $code,
         Throwable        $prev = null
-    )
-    {
+    ) {
         parent::__construct($originMsg, $code, $prev);
         $this->title = (string)$code;
     }
