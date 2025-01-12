@@ -2,9 +2,15 @@
     "name": "sfw2/exception",
     "type": "library",
     "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3",
-
+    "description": "http status as exceptions",
+    "authors": [
+        {
+            "name": "Stefan Paproth",
+            "email": "pappi-@gmx.de"
+        }
+    ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.1",
 
         "fig/http-message-util": "^1.1.5"
     },

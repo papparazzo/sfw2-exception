@@ -29,6 +29,11 @@ use Throwable;
 
 final class HttpMethodNotAllowed extends HttpException
 {
+    /**
+     * @param string[] $allowed
+     * @param string $msg
+     * @param Throwable|null $prev
+     */
     public function __construct(
         private readonly array $allowed,
         string $msg = 'Method Not Allowed',
