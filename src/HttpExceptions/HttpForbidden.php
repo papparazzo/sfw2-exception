@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpForbidden extends HttpException
+final class HttpForbidden extends HttpException
 {
     public function __construct(string $msg = 'Forbidden', Throwable $prev = null)
     {

@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpServiceUnavailable extends HttpException
+final class HttpServiceUnavailable extends HttpException
 {
     public function __construct(string $msg = 'Service Unavailable', Throwable $prev = null)
     {

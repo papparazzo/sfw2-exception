@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpUnauthorized extends HttpException
+final class HttpUnauthorized extends HttpException
 {
     public function __construct(string $msg = 'Unauthorized', Throwable $prev = null)
     {

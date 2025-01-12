@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpUnprocessableContent extends HttpException
+final class HttpUnprocessableContent extends HttpException
 {
     public function __construct(string $msg = 'Unprocessable Content', Throwable $prev = null)
     {

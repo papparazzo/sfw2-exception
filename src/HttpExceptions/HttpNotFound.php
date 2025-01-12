@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpNotFound extends HttpException
+final class HttpNotFound extends HttpException
 {
     public function __construct(string $msg = 'Not Found', Throwable $prev = null)
     {

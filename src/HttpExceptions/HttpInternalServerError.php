@@ -27,7 +27,7 @@ namespace SFW2\Exception\HttpExceptions;
 use Fig\Http\Message\StatusCodeInterface;
 use Throwable;
 
-class HttpInternalServerError extends HttpException
+final class HttpInternalServerError extends HttpException
 {
     public function __construct(string $msg = 'Internal Server Error', Throwable $prev = null)
     {
