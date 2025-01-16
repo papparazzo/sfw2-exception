@@ -17,7 +17,6 @@
  *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program. If not, see <http://www.gnu.org/licenses/agpl.txt>.
- *
  */
 
 declare(strict_types=1);
@@ -30,8 +29,8 @@ use Throwable;
 final class HttpMethodNotAllowed extends HttpException
 {
     /**
-     * @param string[] $allowed
-     * @param string $msg
+     * @param string[]       $allowed
+     * @param string         $msg
      * @param Throwable|null $prev
      */
     public function __construct(

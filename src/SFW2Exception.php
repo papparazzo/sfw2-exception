@@ -17,7 +17,6 @@
  *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program. If not, see <http://www.gnu.org/licenses/agpl.txt>.
- *
  */
 
 namespace SFW2\Exception;
@@ -40,7 +39,7 @@ class SFW2Exception extends Exception
     }
 
     /**
-     * @return DateTimeInterface
+     * @return       DateTimeInterface
      * @noinspection PhpUnused
      */
     public function getTimeStamp(): DateTimeInterface
@@ -49,7 +48,7 @@ class SFW2Exception extends Exception
     }
 
     /**
-     * @return string
+     * @return       string
      * @noinspection PhpUnused
      */
     public function getIdentifier(): string
