@@ -30,7 +30,7 @@ use Throwable;
 
 final class HttpStatus204NoContent extends HttpException
 {
-    public function __construct(string $msg = 'No Content', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 204 "No Content"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Keine Daten vorhanden',
