@@ -31,7 +31,7 @@ final class HttpStatus308PermanentRedirect extends HttpException
 {
     public function __construct(
         private readonly string $location,
-        string $msg = 'Permanent Redirect',
+        string $msg = 'http status 308 "Permanent Redirect"',
         Throwable $prev = null
     ) {
         parent::__construct(

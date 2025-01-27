@@ -31,7 +31,7 @@ final class HttpStatus301MovedPermanently extends HttpException
 {
     public function __construct(
         private readonly string $location,
-        string $msg = 'Moved Permanently',
+        string $msg = 'http status 301 "Moved Permanently"',
         Throwable $prev = null
     ) {
         parent::__construct(
