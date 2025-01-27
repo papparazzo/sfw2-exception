@@ -21,22 +21,24 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status5xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpServiceUnavailable extends HttpException
+final class HttpStatus500InternalServerError extends HttpException
 {
-    public function __construct(string $msg = 'Service Unavailable', Throwable $prev = null)
+    public function __construct(string $msg = 'Internal Server Error', Throwable $prev = null)
     {
+        // TODO: insert e-mail-address
         parent::__construct(
-            caption: 'Die Seiten sind aktuell offline',
+            caption: 'Interner Fehler aufgetreten!',
             description:
-                'Aufgrund von umfangreichen Wartungsarbeiten sind die Webseiten im Moment leider nicht ' .
-                'zu erreichen. Bitte versuche es später noch einmal.',
+                'Es ist ein interner Fehler aufgetreten. Bitte rufe die Seite erneut auf. ' .
+                'Sollte der Fehler abermals auftreten wende dich bitte mit der unten angegenen ID an den Webmaster',
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_SERVICE_UNAVAILABLE,
+            code: StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR,
             prev: $prev
         );
     }
