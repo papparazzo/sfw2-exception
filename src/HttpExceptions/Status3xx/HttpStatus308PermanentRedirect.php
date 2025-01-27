@@ -21,23 +21,25 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status3xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpMovedPermanently extends HttpException
+final class HttpStatus308PermanentRedirect extends HttpException
 {
     public function __construct(
         private readonly string $location,
-        string $msg = 'Moved Permanently',
+        string $msg = 'Permanent Redirect',
         Throwable $prev = null
     ) {
         parent::__construct(
-            caption: 'Umleitung',
-            description: "Der Link ist nicht mehr gültig, die Seiten sind nach '$this->location' umgezogen.' ",
+            caption: 'Dauerhafte Umleitung',
+            description:
+                "Der Link ist nicht mehr gültig, die Seiten sind dauerhaft nach '$this->location' umgezogen.' ",
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_MOVED_PERMANENTLY,
+            code: StatusCodeInterface::STATUS_PERMANENT_REDIRECT,
             prev: $prev
         );
     }
