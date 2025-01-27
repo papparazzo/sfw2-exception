@@ -16,19 +16,20 @@
  *  GNU Affero General Public License for more details.
  *
  *  You should have received a copy of the GNU Affero General Public License
- *  along with this program. If not, see <http://www.gnu.org/licenses/agpl.txt>.
+ *  along with this program. If not, see <https://www.gnu.org/licenses/agpl.txt>.
  */
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status4xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpBadRequest extends HttpException
+final class HttpStatus400BadRequest extends HttpException
 {
-    public function __construct(string $msg = 'Internal Server Error', Throwable $prev = null)
+    public function __construct(string $msg = 'Bad Request', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Ungültige Daten!',

@@ -21,21 +21,23 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status4xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpUnauthorized extends HttpException
+final class HttpStatus403Forbidden extends HttpException
 {
-    public function __construct(string $msg = 'Unauthorized', Throwable $prev = null)
+    public function __construct(string $msg = 'Forbidden', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Keine Berechtigung',
             description:
-                'Du hast fehlerhafte Anmeldedaten eingegeben. Bitte korrigiere deine Eingaben und probiere es erneut.',
+                'Dir fehlt die Berechtigung für diese Seite. ' .
+                'Bitte melde dich mit einem anderen User der erweiterte Rechte enthält an und probiere es erneut.',
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_UNAUTHORIZED,
+            code: StatusCodeInterface::STATUS_FORBIDDEN,
             prev: $prev
         );
     }

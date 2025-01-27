@@ -21,22 +21,23 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status4xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpForbidden extends HttpException
+final class HttpStatus404NotFound extends HttpException
 {
-    public function __construct(string $msg = 'Forbidden', Throwable $prev = null)
+    public function __construct(string $msg = 'Not Found', Throwable $prev = null)
     {
         parent::__construct(
-            caption: 'Keine Berechtigung',
+            caption: 'Seite nicht vorhanden',
             description:
-                'Dir fehlt die Berechtigung für diese Seite. ' .
-                'Bitte melde dich mit einem anderen User der erweiterte Rechte enthält an und probiere es erneut.',
+                'Die gewünschte Seite konnte nicht gefunden werden. ' .
+                'Bitte prüfe die URL auf Fehler und drücke dann den reload-Button in deinem Browser.',
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_FORBIDDEN,
+            code: StatusCodeInterface::STATUS_NOT_FOUND,
             prev: $prev
         );
     }

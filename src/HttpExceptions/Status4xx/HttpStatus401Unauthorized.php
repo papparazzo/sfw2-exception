@@ -21,22 +21,22 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status4xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpNotFound extends HttpException
+final class HttpStatus401Unauthorized extends HttpException
 {
-    public function __construct(string $msg = 'Not Found', Throwable $prev = null)
+    public function __construct(string $msg = 'Unauthorized', Throwable $prev = null)
     {
         parent::__construct(
-            caption: 'Seite / Eintrag nicht vorhanden',
+            caption: 'Keine Berechtigung',
             description:
-                'Die gewünschten Daten konnten nicht gefunden werden. ' .
-                'Bitte prüfe die URL auf Fehler und drücke dann den reload-Button in deinem Browser.',
+                'Du hast fehlerhafte Anmeldedaten eingegeben. Bitte korrigiere deine Eingaben und probiere es erneut.',
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_NOT_FOUND,
+            code: StatusCodeInterface::STATUS_UNAUTHORIZED,
             prev: $prev
         );
     }

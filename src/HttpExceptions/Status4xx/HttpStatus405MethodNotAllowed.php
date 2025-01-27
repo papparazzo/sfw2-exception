@@ -3,7 +3,7 @@
 /**
  *  SFW2 - SimpleFrameWork
  *
- *  Copyright (C) 2023  Stefan Paproth
+ *  Copyright (C) 2025  Stefan Paproth
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Affero General Public License as
@@ -21,23 +21,36 @@
 
 declare(strict_types=1);
 
-namespace SFW2\Exception\HttpExceptions;
+namespace SFW2\Exception\HttpExceptions\Status4xx;
 
 use Fig\Http\Message\StatusCodeInterface;
+use SFW2\Exception\HttpExceptions\HttpException;
 use Throwable;
 
-final class HttpUnprocessableContent extends HttpException
+final class HttpStatus405MethodNotAllowed extends HttpException
 {
-    public function __construct(string $msg = 'Unprocessable Content', Throwable $prev = null)
-    {
+    /**
+     * @param string[]       $allowed
+     * @param string         $msg
+     * @param Throwable|null $prev
+     */
+    public function __construct(
+        private readonly array $allowed,
+        string $msg = 'Method Not Allowed',
+        Throwable $prev = null
+    ) {
         parent::__construct(
-            caption: 'Fehlerhafte Daten',
-            description:
-                'Es wurden fehlerhafte Daten übermittelt. ' .
-                'Bitte prüfe die Daten auf Richtigkeit und versuche es erneut.',
+            caption: 'Methode nicht erlaubt!',
+            description: "Nur folgende Methoden sind erlaubt: '" . implode("', '", $this->allowed) . "'",
             originMsg: $msg,
-            code: StatusCodeInterface::STATUS_UNPROCESSABLE_ENTITY,
+            code: StatusCodeInterface::STATUS_METHOD_NOT_ALLOWED,
             prev: $prev
         );
+    }
+
+    public function getAdditionalHeaders(): array
+    {
+        // Allow: GET, POST, HEAD, ...
+        return ['Allow' =>  implode(', ', $this->allowed)];
     }
 }
