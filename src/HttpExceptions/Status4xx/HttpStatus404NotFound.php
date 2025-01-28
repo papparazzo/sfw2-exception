@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus404NotFound extends HttpException
 {
-    public function __construct(string $msg = 'Not Found', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 404 "Not Found"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Seite nicht vorhanden',

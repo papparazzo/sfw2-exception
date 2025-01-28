@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus422UnprocessableContent extends HttpException
 {
-    public function __construct(string $msg = 'Unprocessable Content', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 422 "Unprocessable Content"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Fehlerhafte Daten',

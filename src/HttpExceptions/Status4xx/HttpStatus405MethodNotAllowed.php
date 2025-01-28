@@ -36,7 +36,7 @@ final class HttpStatus405MethodNotAllowed extends HttpException
      */
     public function __construct(
         private readonly array $allowed,
-        string $msg = 'Method Not Allowed',
+        string $msg = 'http status 405 "Method Not Allowed"',
         Throwable $prev = null
     ) {
         parent::__construct(
