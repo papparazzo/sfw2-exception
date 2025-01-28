@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus500InternalServerError extends HttpException
 {
-    public function __construct(string $msg = 'Internal Server Error', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 500 "Internal Server Error"', Throwable $prev = null)
     {
         // TODO: insert e-mail-address
         parent::__construct(

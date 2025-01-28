@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus503ServiceUnavailable extends HttpException
 {
-    public function __construct(string $msg = 'Service Unavailable', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 503 "Service Unavailable"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Die Seiten sind aktuell offline',
