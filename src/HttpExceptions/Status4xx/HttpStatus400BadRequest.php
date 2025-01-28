@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus400BadRequest extends HttpException
 {
-    public function __construct(string $msg = 'Bad Request', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 400 "Bad Request"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Ungültige Daten!',

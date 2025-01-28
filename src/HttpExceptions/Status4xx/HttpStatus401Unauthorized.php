@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus401Unauthorized extends HttpException
 {
-    public function __construct(string $msg = 'Unauthorized', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 401 "Unauthorized"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Keine Berechtigung',

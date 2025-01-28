@@ -29,7 +29,7 @@ use Throwable;
 
 final class HttpStatus403Forbidden extends HttpException
 {
-    public function __construct(string $msg = 'Forbidden', Throwable $prev = null)
+    public function __construct(string $msg = 'http status 403 "Forbidden"', Throwable $prev = null)
     {
         parent::__construct(
             caption: 'Keine Berechtigung',
